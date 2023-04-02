@@ -17,8 +17,8 @@ export class EditarEmpresaComponent {
 
   constructor(
     private empresaService: EmpresaService,
-    private config: DynamicDialogConfig,
-    private ref : DynamicDialogRef,
+    public config: DynamicDialogConfig,
+    public ref : DynamicDialogRef,
     private formBuilder: FormBuilder
   ){
     this.empresa = this.config.data.empresa;

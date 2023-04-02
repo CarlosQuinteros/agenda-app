@@ -15,6 +15,7 @@ import { ToastModule } from 'primeng/toast';
 import { AccordionModule } from 'primeng/accordion';
 import { ChipsModule } from 'primeng/chips';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DropdownModule } from 'primeng/dropdown';
 
 //componentes
 import { ListaPersonasComponent } from './componentes/personas/lista/lista-personas.component';
@@ -26,6 +27,8 @@ import { NuevaPersonaComponent } from './componentes/personas/nuevo/nueva-person
 import { EditarPersonaComponent } from './componentes/personas/editar/editar-persona.component';
 import { NuevaEmpresaComponent } from './componentes/empresas/nuevo/nueva-empresa.component';
 import { EditarEmpresaComponent } from './componentes/empresas/editar/editar-empresa.component';
+import { NuevoContactoComponent } from './componentes/contactos/Nuevo/nuevo-contacto.component';
+import { EditarContactoComponent } from './componentes/contactos/editar/editar-contacto.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { EditarEmpresaComponent } from './componentes/empresas/editar/editar-emp
     NuevaPersonaComponent,
     EditarPersonaComponent,
     NuevaEmpresaComponent,
-    EditarEmpresaComponent
+    EditarEmpresaComponent,
+    NuevoContactoComponent,
+    EditarContactoComponent
   ],
   imports: [
     FormsModule,
@@ -53,7 +58,8 @@ import { EditarEmpresaComponent } from './componentes/empresas/editar/editar-emp
     ToastModule,
     AccordionModule,
     ChipsModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

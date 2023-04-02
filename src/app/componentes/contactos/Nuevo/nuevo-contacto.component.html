@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="crearContacto()">
+    <div class="row d-flex justify-content-center p-3">
+        <div class="col-12 col-md-6">
+            <label for="labeltitulo" class="form-label">Titulo</label>
+            <input formControlName="titulo" type="text" class="form-control p-inputtext" placeholder="Nombre">
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="labelimagen" class="form-label">Imagen Url</label>
+            <input formControlName="imagenUrl" type="text" class="form-control p-inputtext" placeholder="Url de la imagen">
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="labelPersona" class="form-label">Persona</label><br>
+            <p-dropdown formControlName="persona" styleClass="max-w-full" [options]="personas" [filter]="true" filterBy="nombre,apellido,email,telefono" placeholder="Seleccione la persona" appendTo="body">
+                <ng-template let-persona pTemplate="selectedItem">
+                    <div *ngIf="persona">
+                        <div>{{ persona.nombre }} {{persona.apellido}}</div>
+                    </div>
+                </ng-template>
+                <ng-template let-persona pTemplate="item">
+                    <div class="overflow-scroll">
+                        <p>{{ persona.nombre }} {{persona.apellido}}</p>
+                        <p class="text-muted">{{persona.email}}</p>
+                        <p class="text-muted">{{persona.telefono}}</p>
+                    </div>
+                </ng-template>
+            </p-dropdown>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="labelEmpresa" class="form-label">Empresa</label><br>
+            <p-dropdown formControlName="empresa" styleClass="max-w-full" [options]="empresas" [filter]="true" filterBy="nombre,sitioWeb,email" optionLabel="nombre" placeholder="Seleccione la empresa" appendTo="body">
+                <ng-template let-empresa pTemplate="item">
+                    <div class="overflow-scroll">
+                        <img [src]="empresa.imagenUrl" alt="image-empresa" width="50px">
+                        <p>{{ empresa.nombre }}</p>
+                        <p class="text-muted">{{empresa.email}}</p>
+                        <p class="text-muted">{{empresa.sitioWeb}}</p>
+                    </div>
+                </ng-template>
+            </p-dropdown>
+        </div>
+        <div class="d-flex justify-content-end mt-2">
+            <button pButton class="p-button-rounded" icon="pi pi-check" label="Guardar" [disabled]="!form.valid"></button>
+        </div>
+    </div>
+</form>
