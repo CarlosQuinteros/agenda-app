@@ -20,8 +20,9 @@
                 <img [src]="empresa.imagenUrl" alt="logo-empresa" width="90px">
             </td>
             <td>
-                <Button pButton class="p-button-text" icon="pi pi-pencil"></Button>
-                <Button pButton class="p-button-text p-button-danger" icon="pi pi-trash" (click)="eliminarEmpresa(empresa.id)"></Button>
+                <Button pButton class="p-button-text p-button-success p-button-sm" icon="pi pi-id-card"></Button>
+                <Button pButton class="p-button-text p-button-sm" icon="pi pi-pencil"></Button>
+                <Button pButton class="p-button-text p-button-danger p-button-sm" icon="pi pi-trash" (click)="eliminarEmpresa(empresa.id)"></Button>
             </td>
         </tr>
     </ng-template>

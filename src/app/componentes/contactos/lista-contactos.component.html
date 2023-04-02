@@ -1,0 +1,30 @@
+<p-toast></p-toast>
+<p-table [value]="contactos" styleClass="p-datatable-sm">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Nombre</th>
+            <th>Empresa</th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-contacto>
+        <tr>
+            <td>{{ contacto.id }}</td>
+            <td>
+                <img class="rounded-circle" [src]="contacto.imagenUrl" alt="imagen-contacto" height="60px" width="60px" style="object-fit: cover; object-position: center;" >
+            </td>
+            <td>{{ contacto.titulo }}</td>
+            <td>{{ contacto.persona.nombre + ' ' + contacto.persona.apellido }}</td>
+            <td>
+                <img [src]="contacto.empresa.imagenUrl" alt="logo-empresa" width="90px">
+            </td>
+            <td>
+                <Button pButton class="p-button-text p-button-sm" icon="pi pi-pencil"></Button>
+                <Button pButton class="p-button-text p-button-danger p-button-sm" icon="pi pi-trash" (click)="eliminarContacto(contacto.id)"> </Button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

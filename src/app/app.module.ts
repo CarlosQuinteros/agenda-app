@@ -9,24 +9,29 @@ import { AppComponent } from './app.component';
 //PrimeNG
 import { ButtonModule } from  'primeng/button'
 import { TabViewModule } from 'primeng/tabview';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
+import { AccordionModule } from 'primeng/accordion';
+import { ChipsModule } from 'primeng/chips';
 
 //componentes
 import { ListaPersonasComponent } from './componentes/personas/lista/lista-personas.component';
 import { ListaEmpresasComponent } from './componentes/empresas/lista/lista-empresas.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { ListaContactosComponent } from './componentes/contactos/lista-contactos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaPersonasComponent,
     ListaEmpresasComponent,
-    HomeComponent
+    HomeComponent,
+    ListaContactosComponent
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -34,7 +39,9 @@ import { HomeComponent } from './componentes/home/home.component';
     ButtonModule,
     TabViewModule,
     TableModule,
-    ToastModule
+    ToastModule,
+    AccordionModule,
+    ChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

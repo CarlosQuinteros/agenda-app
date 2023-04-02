@@ -1,5 +1,46 @@
 <p-toast></p-toast>
-<p-table [value]="personas" styleClass="p-datatable-sm">
+<button pButton class="p-button-rounded me-4" label="Nueva Persona" icon="pi pi-plus"></button>
+<button pButton class="p-button-rounded p-button-secondary" label="Todos" icon="pi pi-users" (click)="obtenerPersonas(null,null)"></button>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <p-accordion [activeIndex]="0" styleClass="mt-5">
+            <p-accordionTab header="Personas por ciudad">
+                <form [formGroup]="formCiudad" (ngSubmit)="buscarPersonasPorCiudad()">
+                    <div class="col-12 col-md-8">
+                        <label for="labelCiudad" class="form-label">Ciudad</label>
+                        <input type="text" formControlName="ciudad" class="form-control p-inputtext" placeholder="Ingrese la ciudad" required>
+                    </div>
+                    <button pButton class="p-button-rounded" icon="pi pi-search" label="Buscar" [disabled]="!formCiudad.valid"></button>
+                </form>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+    <div class="col-12 col-md-6">
+        <p-accordion [activeIndex]="0" styleClass="mt-1 mt-md-5">
+            <p-accordionTab header="Personas en varias ciudades">
+                <form [formGroup]="formPersonasVariasCiudades" (ngSubmit)="buscarPersonasEnVariasCiudades()" class="row">
+                    <div class="col-12 col-md-6">
+                        <label for="labelNombre" class="form-label">Nombre</label>
+                        <input type="text" formControlName="nombre" class="form-control p-inputtext" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="labelApellido" class="form-label">Apellido</label>
+                        <input type="text" formControlName="apellido" class="form-control p-inputtext" placeholder="Ingrese el apellido" required>
+                    </div>
+                    <div class="my-2">
+                        <label for="labelCiudades" class="form-label">Chips de ciudades</label><br>
+                        <p-chips formControlName="ciudades" placeholder="Ingrese ciudades"></p-chips>
+                    </div>
+                    <div class="col-4">
+                        <button pButton class="p-button-rounded" icon="pi pi-search" label="Buscar" [disabled]="!formPersonasVariasCiudades.valid"></button>
+                    </div>
+                </form>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>
+
+<p-table [value]="personas" styleClass="p-datatable-sm mt-4">
     <ng-template pTemplate="header">
         <tr>
             <th>Id</th>
@@ -18,8 +59,8 @@
             <td>{{ persona.email }}</td>
             <td>{{ persona.ciudad }}</td>
             <td>
-                <Button pButton class="p-button-text" icon="pi pi-pencil"></Button>
-                <Button pButton class="p-button-text p-button-danger" icon="pi pi-trash" (click)="eliminarPersona(persona.id)"></Button>
+                <Button pButton class="p-button-text p-button-sm" icon="pi pi-pencil"></Button>
+                <Button pButton class="p-button-text p-button-sm p-button-danger" icon="pi pi-trash" (click)="eliminarPersona(persona.id)"></Button>
             </td>
         </tr>
     </ng-template>
