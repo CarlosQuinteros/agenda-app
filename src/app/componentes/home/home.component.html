@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row m-4 d-flex justify-content-center">
+        <div class="col m-3 rounded-3 bg-white p-6 border-blue-100 border-1">
+            <h1>Bienvenido!</h1>
+            <p>En esta sección podrás gestionar Personas, Empresas y sus contactos</p>
+            <p-tabView styleClass="mt-4">
+                <p-tabPanel header="Personas" leftIcon="pi pi-user">
+                    <app-lista-personas></app-lista-personas>
+                </p-tabPanel>
+                <p-tabPanel header="Empresas" leftIcon="pi pi-building">
+                    <app-lista-empresas></app-lista-empresas>
+                </p-tabPanel>
+                <p-tabPanel header="Contactos" leftIcon="pi pi-id-card">
+                    <p>
+                        seccion contactos
+                    </p>
+                </p-tabPanel>
+            </p-tabView>
+        </div>
+    </div>
+</div>

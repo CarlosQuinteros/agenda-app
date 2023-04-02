@@ -1,0 +1,28 @@
+<p-toast></p-toast>
+<p-table [value]="empresas" styleClass="p-datatable-sm">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Web</th>
+            <th>Logo</th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-empresa>
+        <tr>
+            <td>{{ empresa.id }}</td>
+            <td>{{ empresa.nombre }}</td>
+            <td>{{ empresa.email }}</td>
+            <td>{{ empresa.sitioWeb }}</td>
+            <td>
+                <img [src]="empresa.imagenUrl" alt="logo-empresa" width="90px">
+            </td>
+            <td>
+                <Button pButton class="p-button-text" icon="pi pi-pencil"></Button>
+                <Button pButton class="p-button-text p-button-danger" icon="pi pi-trash" (click)="eliminarEmpresa(empresa.id)"></Button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
