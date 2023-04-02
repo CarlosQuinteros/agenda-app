@@ -16,7 +16,7 @@ export class PersonaService {
     private httpClient : HttpClient
   ) { }
 
-  public crearPersona(personaDto : PersonaDto):Observable<PersonaDto> {
+  public crearPersona(personaDto : PersonaDto):Observable<any> {
     return this.httpClient.post<any>(this.personaURL, personaDto);
   }
 

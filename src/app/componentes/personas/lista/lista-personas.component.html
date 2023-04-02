@@ -1,9 +1,9 @@
 <p-toast></p-toast>
-<button pButton class="p-button-rounded me-4" label="Nueva Persona" icon="pi pi-plus"></button>
+<button pButton class="p-button-rounded me-4" label="Nueva Persona" icon="pi pi-plus" (click)="mostrarCrearPersona()"></button>
 <button pButton class="p-button-rounded p-button-secondary" label="Todos" icon="pi pi-users" (click)="obtenerPersonas(null,null)"></button>
 <div class="row">
     <div class="col-12 col-md-6">
-        <p-accordion [activeIndex]="0" styleClass="mt-5">
+        <p-accordion styleClass="mt-5">
             <p-accordionTab header="Personas por ciudad">
                 <form [formGroup]="formCiudad" (ngSubmit)="buscarPersonasPorCiudad()">
                     <div class="col-12 col-md-8">
@@ -16,7 +16,7 @@
         </p-accordion>
     </div>
     <div class="col-12 col-md-6">
-        <p-accordion [activeIndex]="0" styleClass="mt-1 mt-md-5">
+        <p-accordion styleClass="mt-1 mt-md-5">
             <p-accordionTab header="Personas en varias ciudades">
                 <form [formGroup]="formPersonasVariasCiudades" (ngSubmit)="buscarPersonasEnVariasCiudades()" class="row">
                     <div class="col-12 col-md-6">
@@ -47,6 +47,7 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
+            <th>Telefono</th>
             <th>Ciudad</th>
             <th>Acciones</th>
         </tr>
@@ -57,9 +58,10 @@
             <td>{{ persona.nombre }}</td>
             <td>{{ persona.apellido }}</td>
             <td>{{ persona.email }}</td>
+            <td>{{ persona.telefono }}</td>
             <td>{{ persona.ciudad }}</td>
             <td>
-                <Button pButton class="p-button-text p-button-sm" icon="pi pi-pencil"></Button>
+                <Button pButton class="p-button-text p-button-sm" icon="pi pi-pencil" (click)="mostrarEditarPersona(persona)"></Button>
                 <Button pButton class="p-button-text p-button-sm p-button-danger" icon="pi pi-trash" (click)="eliminarPersona(persona.id)"></Button>
             </td>
         </tr>

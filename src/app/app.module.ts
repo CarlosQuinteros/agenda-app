@@ -14,6 +14,7 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { AccordionModule } from 'primeng/accordion';
 import { ChipsModule } from 'primeng/chips';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 //componentes
 import { ListaPersonasComponent } from './componentes/personas/lista/lista-personas.component';
@@ -21,6 +22,8 @@ import { ListaEmpresasComponent } from './componentes/empresas/lista/lista-empre
 import { HomeComponent } from './componentes/home/home.component';
 import { ListaContactosComponent } from './componentes/contactos/lista-contactos.component';
 import { ContactosEmpresaComponent } from './componentes/empresas/contactos/contactos-empresa.component';
+import { NuevaPersonaComponent } from './componentes/personas/nuevo/nueva-persona.component';
+import { EditarPersonaComponent } from './componentes/personas/editar/editar-persona.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { ContactosEmpresaComponent } from './componentes/empresas/contactos/cont
     ListaEmpresasComponent,
     HomeComponent,
     ListaContactosComponent,
-    ContactosEmpresaComponent
+    ContactosEmpresaComponent,
+    NuevaPersonaComponent,
+    EditarPersonaComponent
   ],
   imports: [
     FormsModule,
@@ -43,7 +48,8 @@ import { ContactosEmpresaComponent } from './componentes/empresas/contactos/cont
     TableModule,
     ToastModule,
     AccordionModule,
-    ChipsModule
+    ChipsModule,
+    DynamicDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
