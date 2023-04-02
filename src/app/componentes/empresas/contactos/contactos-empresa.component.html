@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row m-4 d-flex justify-content-center">
+        <div class="col m-3 rounded-3 bg-white p-6 border-blue-100 border-1" *ngIf="empresa">
+            <img [src]="empresa.imagenUrl" alt="empresa-logo" width="200px">
+            <div class="my-4">
+                <h3>Contactos de {{empresa.nombre}}</h3>
+            </div>
+            <button pButton class="p-button-sm p-button-text" label="Volver" icon="pi pi-arrow-left" routerLink="/home"></button>
+            <p-table [value]="contactos" styleClass="p-datatable-sm mt-4">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Id</th>
+                        <th>Imagen</th>
+                        <th>Titulo</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-contacto>
+                    <tr>
+                        <td>{{ contacto.id }}</td>
+                        <td>
+                            <img class="rounded-circle" [src]="contacto.imagenUrl" alt="imagen-contacto" height="60px" width="60px" style="object-fit: cover; object-position: center;" >
+                        </td>
+                        <td>{{ contacto.titulo }}</td>
+                        <td>{{ contacto.persona.nombre + ' ' + contacto.persona.apellido }}</td>
+                        <td>{{contacto.persona.email}}</td>
+                        <td>{{contacto.persona.telefono}}</td>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

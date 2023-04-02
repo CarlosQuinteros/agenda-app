@@ -20,6 +20,7 @@ import { ListaPersonasComponent } from './componentes/personas/lista/lista-perso
 import { ListaEmpresasComponent } from './componentes/empresas/lista/lista-empresas.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { ListaContactosComponent } from './componentes/contactos/lista-contactos.component';
+import { ContactosEmpresaComponent } from './componentes/empresas/contactos/contactos-empresa.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ListaContactosComponent } from './componentes/contactos/lista-contactos
     ListaPersonasComponent,
     ListaEmpresasComponent,
     HomeComponent,
-    ListaContactosComponent
+    ListaContactosComponent,
+    ContactosEmpresaComponent
   ],
   imports: [
     FormsModule,

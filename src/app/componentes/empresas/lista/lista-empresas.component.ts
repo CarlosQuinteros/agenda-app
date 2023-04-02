@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Empresa } from 'src/app/core/modelo/empresa';
 import { EmpresaService } from 'src/app/servicios/empresa.service';
@@ -15,7 +16,8 @@ export class ListaEmpresasComponent implements OnInit {
 
   constructor(
     private empresaService : EmpresaService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ){
     
   }
