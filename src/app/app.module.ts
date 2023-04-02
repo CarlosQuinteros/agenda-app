@@ -24,6 +24,8 @@ import { ListaContactosComponent } from './componentes/contactos/lista-contactos
 import { ContactosEmpresaComponent } from './componentes/empresas/contactos/contactos-empresa.component';
 import { NuevaPersonaComponent } from './componentes/personas/nuevo/nueva-persona.component';
 import { EditarPersonaComponent } from './componentes/personas/editar/editar-persona.component';
+import { NuevaEmpresaComponent } from './componentes/empresas/nuevo/nueva-empresa.component';
+import { EditarEmpresaComponent } from './componentes/empresas/editar/editar-empresa.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { EditarPersonaComponent } from './componentes/personas/editar/editar-per
     ListaContactosComponent,
     ContactosEmpresaComponent,
     NuevaPersonaComponent,
-    EditarPersonaComponent
+    EditarPersonaComponent,
+    NuevaEmpresaComponent,
+    EditarEmpresaComponent
   ],
   imports: [
     FormsModule,

@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="crearEmpresa()">
+    <div class="row d-flex justify-content-center p-3">
+        <div class="col-12 col-md-6">
+            <label for="labelNombre" class="form-label">Nombre</label>
+            <input formControlName="nombre" type="text" class="form-control p-inputtext" placeholder="Nombre">
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="labelApellido" class="form-label">Sitio web</label>
+            <input formControlName="sitioWeb" type="text" class="form-control p-inputtext" placeholder="Sitio web">
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="labelEmail" class="form-label">Email</label>
+            <input formControlName="email" type="email" class="form-control p-inputtext" placeholder="Correo electronico">
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="labelImagen" class="form-label">Imagen Url</label>
+            <input formControlName="imagenUrl" type="text" class="form-control p-inputtext" placeholder="Url de la imagen">
+        </div>
+        <div class="d-flex justify-content-end">
+            <button pButton class="p-button-rounded" icon="pi pi-check" label="Guardar" [disabled]="!form.valid"></button>
+        </div>
+    </div>
+</form>
